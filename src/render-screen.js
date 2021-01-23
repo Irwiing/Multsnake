@@ -3,7 +3,7 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     canvas.height = game.state.screen.height
     const ctx = canvas.getContext("2d");    
     ctx.fillStyle = 'white'
-    ctx.clearRect(0, 0, 10, 10)
+    ctx.clearRect(0, 0, game.state.screen.height, game.state.screen.width)
 
     for (const snakeId in game.state.snakes){
         const snake = game.state.snakes[snakeId]
