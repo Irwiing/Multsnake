@@ -3,7 +3,7 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     canvas.height = game.state.screen.height
     const ctx = canvas.getContext("2d");    
     ctx.fillStyle = 'white'
-    ctx.clearRect(0, 0, game.state.screen.height, game.state.screen.width)
+    ctx.clearRect(0, 0, canvas.width,  canvas.height)
 
     for (const snakeId in game.state.snakes){
         const snake = game.state.snakes[snakeId]
@@ -19,7 +19,7 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     }
     for (const fruitId in game.state.fruits){
         const fruit = game.state.fruits[fruitId]
-        ctx.fillStyle = 'green'
+        ctx.fillStyle = 'red'
         ctx.globalAlpha = 1
         ctx.fillRect(fruit.x, fruit.y, 1, 1)
         // console.log(`> renderizando ${fruitId}`)
