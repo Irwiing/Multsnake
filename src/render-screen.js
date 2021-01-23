@@ -8,6 +8,7 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     for (const snakeId in game.state.snakes){
         const snake = game.state.snakes[snakeId]
         ctx.fillStyle = 'black'
+        ctx.globalAlpha = 1
         ctx.fillRect(snake.size[0].x, snake.size[0].y, 1, 1)
         if(snake.size.length > 0){
             for(let i = 0; i < snake.size.length ; i++){
@@ -19,6 +20,7 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     for (const fruitId in game.state.fruits){
         const fruit = game.state.fruits[fruitId]
         ctx.fillStyle = 'green'
+        ctx.globalAlpha = 1
         ctx.fillRect(fruit.x, fruit.y, 1, 1)
         // console.log(`> renderizando ${fruitId}`)
     }
@@ -26,8 +28,9 @@ export default function renderScreen(canvas, game, requestAnimationFrame, curren
     const currentSnake = game.state.snakes[currentSnakeId]
 
     if(currentSnake) {
-        ctx.fillStyle = '#e9e513'
-        ctx.fillRect(currentSnake.x, currentSnake.y, 1, 1)
+        ctx.fillStyle = 'yellow'
+        ctx.globalAlpha = 1
+        ctx.fillRect(currentSnake.size[0].x, currentSnake.size[0].y, 1, 1)
         if(currentSnake.size.length > 0){
             for(let i = 0; i < currentSnake.size.length ; i++){
                 ctx.globalAlpha = 0.60

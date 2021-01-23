@@ -6,11 +6,12 @@ const game = createGame()
 const keyboardListenner = createKeyboardListenner(document)
 
 
+
 const socket = io()
 
 socket.on('connect', () => {
     const snakeId = socket.id
-    
+    const name = prompt('Informe seu nick')    
     
     const canvas = document.getElementById('myCanvas')
     renderScreen(canvas, game, requestAnimationFrame, snakeId)

@@ -69,7 +69,7 @@ export default function createGame(){
         //     }
         // }
 
-        if(state.totalFruits < 5 ){
+        if(state.totalFruits < 20 ){
             state.fruits[fruitId] = {
                 x: fruitX,
                 y: fruitY
@@ -150,8 +150,7 @@ export default function createGame(){
 
             if (snake.size[0].x === fruit.x && snake.size[0].y === fruit.y){
                 snake.score++
-                snake.size.push({x: snake.size[0].x, y: snake.size[0].y})
-                console.log("> collision size", snake.size)
+                snake.size.push({x: snake.size[0].x, y: snake.size[0].y})                
                 removeFruit({ fruitId })
             }
         }
