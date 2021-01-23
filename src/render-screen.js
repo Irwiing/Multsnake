@@ -1,6 +1,8 @@
 export default function renderScreen(canvas, game, requestAnimationFrame, currentSnakeId) {
     canvas.width = game.state.screen.width
     canvas.height = game.state.screen.height
+    
+
     const ctx = canvas.getContext("2d");    
     ctx.fillStyle = 'white'
     ctx.clearRect(0, 0, canvas.width,  canvas.height)

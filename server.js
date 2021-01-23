@@ -22,8 +22,8 @@ game.subscribe((command) => {
 
 
 sockets.on('connection', (socket) => {
-    const snakeId = socket.id    
-
+    const snakeId = socket.id
+    
     game.addSnake({ snakeId })
     console.log(`> Player has connected as ${snakeId}`)
 
@@ -45,5 +45,5 @@ sockets.on('connection', (socket) => {
 })
 
 server.listen(process.env.PORT || 3000, () => {
-    console.log('> server listening on port: 3000')
+    console.log(`> server listening on port: ${process.env.PORT}`)
 })
